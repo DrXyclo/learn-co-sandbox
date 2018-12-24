@@ -1,0 +1,27 @@
+board = all_odd = true
+[1,3,5].each do |number|
+  if number.even? # Will evaluate to false for 1, true for 2, false for 3
+    all_odd = false
+  end
+end
+
+board = ["X", " ", "O", "X", "X"]
+board = ["X", "X", "X", "X", "X"]
+
+board.select do |element|
+element == "X"
+end
+
+WIN_COMBO = [[0,1,2], [3,4,5]]
+
+def won?(board)
+    winning_array = WIN_COMBO.detect do |win|
+      if win.all? {|index| 
+        board[index] == "X"}
+        winning_array.inspect
+        
+      end
+    end
+end
+
+        
